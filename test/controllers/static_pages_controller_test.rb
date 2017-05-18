@@ -1,6 +1,11 @@
 require 'test_helper'
+require "minitest/reporters"
+Minitest::Reporters.use!
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  fixtures :all
+
   def setup
     @base_title = "Ruby on Rails Tutorial Sample App"
   end
