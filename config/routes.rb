@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   #User routes
   get '/signup', to: 'users#new'
   post '/signup',  to: 'users#create'
+
+  #Session routes
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 end
