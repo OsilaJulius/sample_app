@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
         redirect_back_or @user
       else
-        flash[:session] = "Sorry #{@user.name}, but you can't log in yet, " +
+        flash[:danger] = "Sorry #{@user.name}, but you can't log in yet, " +
                          "please check your email to activate " +
                          "your account."
         redirect_to root_url
