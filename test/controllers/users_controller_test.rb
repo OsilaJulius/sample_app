@@ -58,4 +58,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
+
+  test "should be redirected to root when user is unactivated" do
+    assert_difference 'User.count', 1 do
+      post signup_path, params: { user: { name: "Uvuevueuvuevue Osas",
+                                        email: "osas@osas.com",
+                                        password: 'password',
+                                        password_confirmation: 'password' } }
+    end
+    samp = User.find_by(email: "osas@osas.com")
+    get user_path(samp.id)
+    follow_redirect!
+    assert_template 'static_pages/home'
+  end
 end
