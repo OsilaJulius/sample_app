@@ -1,0 +1,15 @@
+one:
+  follower: railstut
+  followed: lana
+
+two:
+  follower: railstut
+  followed: malory
+
+three:
+  follower: lana
+  followed: railstut
+
+four:
+  follower: archer
+  followed: railstut
